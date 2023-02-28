@@ -1,0 +1,55 @@
+{
+  "train_datasets": [
+    {
+      "name": "next_qa_oe",
+      "txt": {
+        "next_qa_oe": "/data3/fukunhao/NExT-QA/nextqa_oe/train.csv"
+      },
+      "img": "/data3/fukunhao/VidOR/video"
+    }
+  ],
+  "val_datasets": [
+    {
+      "name": "next_qa_oe",
+      "txt": {
+        "next_qa_oe": "/data3/fukunhao/NExT-QA/nextqa_oe/val.csv"
+      },
+      "img": "/data3/fukunhao/VidOR/video"
+    }
+  ],
+  "map_vid_vidorID_path": "/data3/fukunhao/NExT-QA/map_vid_vidorID.json",
+  "ref_answer_add_path": "/data3/fukunhao/NExT-QA/nextqa_oe/add_reference_answer_test.json",
+  "ans2label_path": "/data3/fukunhao/NExT-QA/nextqa_oe/vocab.pkl",
+  "max_txt_len": 40,
+  "crop_img_size": 224,
+  "resize_size": 256,
+  "img_pixel_mean": [0.48145466, 0.4578275, 0.40821073],
+  "img_pixel_std": [0.26862954, 0.26130258, 0.27577711],
+  "img_input_format": "RGB",
+  "train_n_clips": 1,
+  "num_frm": 16,
+  "model_config": "config_release/base_model.json",
+  "tokenizer_dir": "/data3/fukunhao/ALPRO/ext/bert-base-uncased",
+  "visual_model_cfg": "config_release/timesformer_divst_8x32_224_k600_gc.json",
+  "e2e_weights_path": "/data3/fukunhao/ALPRO/output/pretrain/alpro_pretrained_ckpt.pt",
+  "LM_weights_path": "/data3/fukunhao/ext_ckpt/model_base_14M.pth",
+  "train_batch_size": 8,
+  "val_batch_size": 8,
+  "gradient_accumulation_steps": 2,
+  "num_train_epochs": 20,
+  "min_valid_steps": 30,
+  "num_valid": 50,
+  "learning_rate": 5e-6,
+  "weight_decay": 1e-3,
+  "decay": "linear",
+  "optim": "adamw",
+  "betas": [0.9, 0.98],
+  "dropout": 0.1,
+  "grad_norm": 5.0,
+  "cnn_lr_decay": "linear",
+  "seed":42,
+  "fp16": 0,
+  "cls_hidden_scale": 2,
+  "task": "next_qa_oe",
+  "num_workers": 4
+}
